@@ -1,0 +1,37 @@
+E1: Eu, Operador de empilhadeira preciso receber uma tarefa de movimentação existente no banco de dados
+A1: Caso não exista alguma tarefa então o servidor deve me retornar null
+
+E2: Eu, Operador de empilhadeira só posso receber uma tarefa do meu armazem
+A1: Caso não exista alguma tarefa para o meu armazem então o servidor deve me retornar null
+
+E3: Eu, Operador de empilhadeira só posso receber uma tarefa que esteja com status "a fazer"
+A1: Caso não exista alguma tarefa com status "a fazer" então o servidor deve me retornar null
+
+E4: Eu, Operador de empilhadeira preciso receber apenas a tarefa que estou associado quando estiver associado em alguma
+A1: Caso não esteja associado a alguma tarefa ainda, então o servidor deve me retornar uma tarefa com status "a fazer"
+
+E5: Eu, Operador de empilhadeira preciso receber a tarefa que foi criada a mais tempo
+A1: Preciso me basear na data de criação da tarefa
+A2: Caso esteja associado a alguma tarefa então o servidor deve me retornar a mesma
+
+E6: Eu, Operador de empilhadeira só posso receber uma tarefa que foi criada hoje
+A1: Caso esteja associado a alguma tarefa então o servidor deve me retornar a mesma
+
+E7: Eu, Operador de empilhadeira preciso que o servidor me retorne uma tarefa com status "em espera" quando informar que estou ocioso
+A1: Apenas retornar uma tarefa com status "em espera" caso não existam tarefas "a fazer" e/ou associadas ao usuario no banco de dados
+
+E8: Eu, Operador de empilhadeira preciso receber uma tarefa priorizada pelo tempo máximo de entrega
+A1: Uma tarefa criada as 12 horas tendo 25min como tempo máximo de entrega é menos prioritária que outra tarefa criada 12:10 tendo 10min como tempo máximo de entrega
+
+E9: Eu, Operador de empilhadeira preciso que o servidor me retorne até duas tarefas caso a minha empilhadeira for de garfo duplo
+A1: Retornar apenas uma tarefa caso não existam mais disponíveis
+A2: Mesmo que eu já esteja associado a uma tarefa preciso receber duas quando estiver usando empilhadeira de garfo duplo
+
+E10: Eu, Operador de empilhadeira preciso receber uma tarefa quando o task interleaving estiver desabilitado para o meu armazem
+A1: Só posso receber apenas uma tarefa independente de estar ou não usando empilhadeira de garfo duplo
+A2: Não posso receber uma tarefa com status "em espera", mesmo informando que estou ocioso
+A3: Só posso receber uma tarefa com status "a fazer", ou associada a mim
+A4: Só posso receber uma tarefa do meu armazem
+
+E11: Eu, Operador de empilhadeira preciso ser associado automaticamente nas tarefas que o servidor me entregar
+A1: Só posso me associar a uma tarefa que esteja com status "a fazer"
