@@ -7,5 +7,5 @@ Regras do jogo:
 - Inicie o setup do seu teste adicionando as entidades na classe Repository
 - A sua implementacao terá que buscar as entidades da classe Repository
 - Crie o teste falhando
-- Faça-o passar sem quebrar os demais testes
+- Faça-o passar sem quebrar os demais testes (Obs: A implementação deve conter o mínimo para que o teste passe)
 - Refatore sem quebrar algum teste!
